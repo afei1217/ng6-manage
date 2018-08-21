@@ -8,8 +8,7 @@ import {
   HttpProgressEvent, 
   HttpUserEvent,
   HttpResponse,
-  HttpErrorResponse,
-  HttpClient
+  HttpErrorResponse
 } from '@angular/common/http';
 import { environment } from "../../../environments/environment";
 import { Observable,of } from "rxjs";
@@ -33,7 +32,15 @@ export class DefaultInterceptor implements HttpInterceptor {
     | HttpUserEvent<any>
     | HttpResponse<any>
   > {
+    // 1 统一添加baseUrl
     let url = req.url;
+    if (!url.startsWith('https://') && !url.startsWith('http://'))  {
+      url = environment.baseURL + url;
+    
+    }
+    // 2 统一设置请求头
+    // 3 统一添加loading
+
     const newReq = req.clone({
       url: url,
     });

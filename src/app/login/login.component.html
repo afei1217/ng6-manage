@@ -1,22 +1,35 @@
 <div class="login_page fillcontain">
 
     <section class="form_contianer">
-      <div class="manage_tip">
-        <p>elm后台管理系统</p>
-      </div>
-      <!-- <el-form :model="loginForm" :rules="rules" ref="loginForm">
-      <el-form-item prop="username">
-        <el-input v-model="loginForm.username" placeholder="用户名"><span>dsfsf</span></el-input>
-      </el-form-item>
-      <el-form-item prop="password">
-        <el-input type="password" placeholder="密码" v-model="loginForm.password"></el-input>
-      </el-form-item>
-      <el-form-item>
-          <el-button type="primary" @click="submitForm('loginForm')" class="submit_btn">登陆</el-button>
-        </el-form-item>
-    </el-form> -->
-    <p class="tip">温馨提示：</p>
-    <p class="tip">未登录过的新用户，自动注册</p>
-    <p class="tip">注册过的用户可凭账号密码登录</p>
+        <div class="manage_tip">
+            <p>elm后台管理系统</p>
+        </div>
+
+        <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm()">
+            <nz-form-item>
+                <nz-form-control>
+                    <nz-input-group>
+                        <input type="text" nz-input formControlName="userName" placeholder="用户名">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="loginForm.get('userName').dirty && loginForm.get('userName').errors">请输入用户名</nz-form-explain>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control>
+                    <nz-input-group>
+                        <input type="password" nz-input formControlName="password" placeholder="密码">
+                    </nz-input-group>
+                    <nz-form-explain *ngIf="loginForm.get('password').dirty && loginForm.get('password').errors">请输入密码</nz-form-explain>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control>
+                    <button nz-button class="login-form-button" [nzType]="'primary'">登录</button>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+        <p class="tip">温馨提示：</p>
+        <p class="tip">未登录过的新用户，自动注册</p>
+        <p class="tip">注册过的用户可凭账号密码登录</p>
     </section>
 </div>
