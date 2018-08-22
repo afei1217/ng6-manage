@@ -14,10 +14,10 @@ export const appRoutes = [
     path:'login',
     component:LoginComponent
   },
-  // {
-  //   path:'home',
-  //   loadChildren:''
-  // },
+  {
+    path:'home',
+    loadChildren:'./layout/home/home.module#HomeModule'
+  },
   {
     path:'**',
     redirectTo:'login',

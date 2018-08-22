@@ -1,0 +1,57 @@
+<nz-layout>
+    <nz-sider class="sider-menu-container">
+
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'">
+            <li nz-menu-item><span><i class="anticon anticon-appstore"></i><span class="nav-text">首页</span></span>
+            </li>
+            <li nz-submenu>
+                <span title><i class="anticon anticon-file"></i><span class="nav-text">数据管理</span></span>
+                <ul>
+                    <li nz-menu-item>用户列表</li>
+                    <li nz-menu-item>商家列表</li>
+                    <li nz-menu-item>食品列表</li>
+                    <li nz-menu-item>订单列表</li>
+                    <li nz-menu-item>管理员列表</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title><i class="anticon anticon-plus"></i><span class="nav-text">添加数据</span></span>
+                <ul>
+                    <li nz-menu-item>添加商铺</li>
+                    <li nz-menu-item>添加商品</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title><i class="anticon anticon-star"></i><span class="nav-text">图表</span></span>
+                <ul>
+                    <li nz-menu-item>用户分布</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title><i class="anticon anticon-edit"></i><span class="nav-text">编辑</span></span>
+                <ul>
+                    <li nz-menu-item>文本编辑</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title><i class="anticon anticon-setting"></i><span class="nav-text">设置</span></span>
+                <ul>
+                    <li nz-menu-item>管理员设置</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title><i class="anticon anticon-info-circle"></i><span class="nav-text">说明</span></span>
+                <ul>
+                    <li nz-menu-item>说明</li>
+                </ul>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout class="sider-content-container">
+        <nz-content>
+            <div>
+                Content
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

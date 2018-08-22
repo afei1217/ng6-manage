@@ -12,7 +12,7 @@ import {
 } from '@angular/common/http';
 import { environment } from "../../../environments/environment";
 import { Observable,of } from "rxjs";
-import { mergeMap, catchError } from "rxjs/operators";
+import { mergeMap, catchError ,shareReplay} from "rxjs/operators";
 
 
 /**
@@ -36,8 +36,8 @@ export class DefaultInterceptor implements HttpInterceptor {
     let url = req.url;
     if (!url.startsWith('https://') && !url.startsWith('http://'))  {
       url = environment.baseURL + url;
-    
     }
+
     // 2 统一设置请求头
     // 3 统一添加loading
 
@@ -65,10 +65,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     
     switch (event.status) {
       case 200:
-        console.log('status:200');
-        if (event instanceof HttpResponse) {
-          console.log(event.body)  
-        }
+        if (event instanceof HttpResponse) {}
         break;
       case 401:
       case 403:

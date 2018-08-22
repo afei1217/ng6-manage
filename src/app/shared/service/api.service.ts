@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Observable,of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-
-  login(data):Observable<any>{
-    
-
-
-    return of('a');
+  /**
+   * 登陆 
+   */
+  login(userName: string, password: string): Promise<any> {
+    return this.http.post('/admin/login', { user_name: userName, password }).toPromise();
   }
-
+  /**
+  * 获取用户信息
+  *  */
+  getAdminInfo(): Promise<any> {
+    return this.http.get('/admin/info').toPromise();
+  }
 
 }
