@@ -4,10 +4,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './service/api.service';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HttpClientModule } from '@angular/common/http';
+import { HeadTopComponent } from './component/head-top/head-top.component';
 
 
 // 注册组件和指令
-const COMPONENTS = [];
+const COMPONENTS = [
+  HeadTopComponent
+];
 const DIRECTIVES = [];
 
 

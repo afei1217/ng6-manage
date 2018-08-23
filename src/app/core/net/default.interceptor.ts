@@ -38,6 +38,7 @@ export class DefaultInterceptor implements HttpInterceptor {
       url = environment.baseURL + url;
     }
 
+    debugger;
     // 2 统一设置请求头
     // 3 统一添加loading
 

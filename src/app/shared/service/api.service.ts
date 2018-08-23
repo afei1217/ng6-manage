@@ -19,7 +19,7 @@ export class ApiService {
   * 获取用户信息
   *  */
   getAdminInfo(): Promise<any> {
-    return this.http.get('/admin/info').toPromise();
+    return this.http.get('https://elm.cangdu.org/admin/info').toPromise();
   }
 
 }

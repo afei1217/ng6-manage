@@ -8,6 +8,7 @@ export const chartRouter = [
   },
   {
     path:'visitor',
-    component:VisitorComponent
+    component:VisitorComponent,
+    data: ['图表', '用户分布'],
   }
 ]
