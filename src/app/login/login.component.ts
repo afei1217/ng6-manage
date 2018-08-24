@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) return;
 
     const formValue = this.loginForm.value;
-    const res = await this.api.login(formValue.userName,formValue.password);
+    const res = await this.api.login(formValue.userName,formValue.password).toPromise();
     
     if (res.status == 1) { // 登录成功
       this.message.success("登陆成功");
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
   }
 
   async getUserInfo(){
-    const userInfo = await this.api.getAdminInfo();
+    const userInfo = await this.api.getAdminInfo().toPromise();
     if (userInfo.status === 1 && userInfo.data && userInfo.data.id) {
       this.message.success("检测到您之前登录过，将自动登录");
       this.router.navigate(['home']);
